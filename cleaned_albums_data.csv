@@ -1,0 +1,16 @@
+,id,name,album_type,total_tracks,popularity,href,release_date,uri
+0,1agEHpWnELaZHWzcbGDCpu,Fortnight (feat. Post Malone) [BLOND:ISH Remix],single,2,55,https://api.spotify.com/v1/albums/1agEHpWnELaZHWzcbGDCpu,2024-05-22,spotify:album:1agEHpWnELaZHWzcbGDCpu
+2,1NAmidJlEaVgA3MpcPFYGq,Lover,album,18,89,https://api.spotify.com/v1/albums/1NAmidJlEaVgA3MpcPFYGq,2019-08-23,spotify:album:1NAmidJlEaVgA3MpcPFYGq
+3,1Mo4aZ8pdj6L1jx8zSwJnt,THE TORTURED POETS DEPARTMENT,album,16,92,https://api.spotify.com/v1/albums/1Mo4aZ8pdj6L1jx8zSwJnt,2024-04-18,spotify:album:1Mo4aZ8pdj6L1jx8zSwJnt
+5,1yGbNOtRIgdIiGHOEBaZWf,1989 (Deluxe),album,19,77,https://api.spotify.com/v1/albums/1yGbNOtRIgdIiGHOEBaZWf,2014-01-01,spotify:album:1yGbNOtRIgdIiGHOEBaZWf
+7,5H7ixXZfsNMGbIE5OBSpcb,THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY,album,31,100,https://api.spotify.com/v1/albums/5H7ixXZfsNMGbIE5OBSpcb,2024-04-19,spotify:album:5H7ixXZfsNMGbIE5OBSpcb
+10,2fenSS68JI1h4Fo296JfGr,folklore,album,16,84,https://api.spotify.com/v1/albums/2fenSS68JI1h4Fo296JfGr,2020-07-24,spotify:album:2fenSS68JI1h4Fo296JfGr
+12,151w1FgRZfnKZA9FEcg9Z3,Midnights,album,13,83,https://api.spotify.com/v1/albums/151w1FgRZfnKZA9FEcg9Z3,2022-10-21,spotify:album:151w1FgRZfnKZA9FEcg9Z3
+15,4hDok0OAJd57SGIT8xuWJH,Fearless (Taylor's Version),album,26,80,https://api.spotify.com/v1/albums/4hDok0OAJd57SGIT8xuWJH,2021-04-09,spotify:album:4hDok0OAJd57SGIT8xuWJH
+17,6DEjYFkNZh67HP7R9PSZvv,reputation,album,15,85,https://api.spotify.com/v1/albums/6DEjYFkNZh67HP7R9PSZvv,2017-11-10,spotify:album:6DEjYFkNZh67HP7R9PSZvv
+18,64LU4c1nfjz1t4VnGhagcg,1989 (Taylor's Version),album,21,85,https://api.spotify.com/v1/albums/64LU4c1nfjz1t4VnGhagcg,2023-10-26,spotify:album:64LU4c1nfjz1t4VnGhagcg
+19,1Uauz6ql2dIPvIOH4JiuhD,All Of The Girls You Loved Before,single,1,64,https://api.spotify.com/v1/albums/1Uauz6ql2dIPvIOH4JiuhD,2019-08-23,spotify:album:1Uauz6ql2dIPvIOH4JiuhD
+20,4j2syEjl3h1To8KbRgvmJn,Love Story (Taylor’s Version),single,1,67,https://api.spotify.com/v1/albums/4j2syEjl3h1To8KbRgvmJn,2021-02-12,spotify:album:4j2syEjl3h1To8KbRgvmJn
+30,5AEDGbliTTfjOB8TSm1sxt,Speak Now (Taylor's Version),album,22,81,https://api.spotify.com/v1/albums/5AEDGbliTTfjOB8TSm1sxt,2023-07-07,spotify:album:5AEDGbliTTfjOB8TSm1sxt
+32,6Ar2o9KCqcyYF9J0aQP3au,Speak Now,album,14,64,https://api.spotify.com/v1/albums/6Ar2o9KCqcyYF9J0aQP3au,2010-10-25,spotify:album:6Ar2o9KCqcyYF9J0aQP3au
+47,6kZ42qRrzov54LcAk4onW9,Red (Taylor's Version),album,30,82,https://api.spotify.com/v1/albums/6kZ42qRrzov54LcAk4onW9,2021-11-12,spotify:album:6kZ42qRrzov54LcAk4onW9
