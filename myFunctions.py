@@ -62,5 +62,17 @@ def get_album(token, album_id):
     json_result = json.loads(result.content)
     return json_result
 
+def get_track_analysis(token, track_id):
+    url = f"https://api.spotify.com/v1/audio-analysis/{track_id}"
+    headers = get_auth_header(token)
+    result = get(url, headers=headers)
+    json_result = json.loads(result.content)["track"]
+    return json_result
 
+def get_track_feature(token, track_id):
+    url = f"https://api.spotify.com/v1/audio-features/{track_id}"
+    headers = get_auth_header(token)
+    result = get(url, headers=headers)
+    json_result = json.loads(result.content)
+    return json_result
 

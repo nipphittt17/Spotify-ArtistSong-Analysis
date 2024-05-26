@@ -1,0 +1,42 @@
+1. duration	
+number
+
+Length of the track in seconds.
+
+Example: 207.95985
+
+2. loudness
+number [float]
+
+The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+
+Example: -5.883	
+
+3. tempo
+number [float]
+
+The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+
+Example: 118.211	
+
+4. time_signature
+integer
+
+An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of "3/4", to "7/4".
+
+Range: 3 - 7
+Example: 4
+
+5. key
+integer	
+The key the track is in. Integers map to pitches using standard Pitch Class notation. E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on. If no key was detected, the value is -1.
+
+Range: -1 - 11
+Example: 9
+
+6. mode
+integer
+
+Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.
+
+Example: 0

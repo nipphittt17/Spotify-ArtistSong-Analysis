@@ -1,6 +1,7 @@
 # import the libraries
 
 from datetime import timedelta
+import airflow
 # The DAG object; we'll need this to instantiate a DAG
 from airflow import DAG
 # Operators; we need this to write tasks!
@@ -43,28 +44,29 @@ download = BashOperator(
 
 # define the task 'extract'
 
-extract = BashOperator(
-    task_id='extract',
-    bash_command='cut -f1,4 -d"#" web-server-access-log.txt > /home/project/airflow/dags/extracted.txt',
-    dag=dag,
-)
+# extract = BashOperator(
+#     task_id='extract',
+#     bash_command='cut -f1,4 -d"#" web-server-access-log.txt > /home/project/airflow/dags/extracted.txt',
+#     dag=dag,
+# )
 
-# define the task 'transform'
+# # define the task 'transform'
 
-transform = BashOperator(
-    task_id='transform',
-    bash_command='tr "[a-z]" "[A-Z]" < /home/project/airflow/dags/extracted.txt > /home/project/airflow/dags/capitalized.txt',
-    dag=dag,
-)
+# transform = BashOperator(
+#     task_id='transform',
+#     bash_command='tr "[a-z]" "[A-Z]" < /home/project/airflow/dags/extracted.txt > /home/project/airflow/dags/capitalized.txt',
+#     dag=dag,
+# )
 
-# define the task 'load'
+# # define the task 'load'
 
-load = BashOperator(
-    task_id='load',
-    bash_command='zip log.zip capitalized.txt' ,
-    dag=dag,
-)
+# load = BashOperator(
+#     task_id='load',
+#     bash_command='zip log.zip capitalized.txt' ,
+#     dag=dag,
+# )
 
 # task pipeline
 
-download >> extract >> transform >> load
+download 
+# >> extract >> transform >> load
