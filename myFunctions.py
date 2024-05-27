@@ -36,16 +36,6 @@ def get_auth_header(token):
     return {"Authorization" : "Bearer " + token}
 
 
-def search_for_artist(token, artist_name):
-    url = "https://api.spotify.com/v1/search"
-    headers = get_auth_header(token)
-    query = f"?q={artist_name}&type=artist&market=TH"
-    query_url = url + query
-    result = get(query_url, headers=headers)
-    json_result = json.loads(result.content)["artists"]["items"]
-    return json_result
-
-
 def get_song(token, artist_name):
     url = f"https://api.spotify.com/v1/search"
     headers = get_auth_header(token)
@@ -76,3 +66,6 @@ def get_track_feature(token, track_id):
     json_result = json.loads(result.content)
     return json_result
 
+# token =  get_token()
+# result = get_track_analysis(token, "3ciqhcLmXP4hVGBD98QlEj")
+# print(result)

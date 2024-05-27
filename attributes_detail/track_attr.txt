@@ -1,5 +1,3 @@
-resource: https://developer.spotify.com/documentation/web-api/reference/search
-
 1. *album
 object
 The album on which the track appears. The album object includes a link in href to full information about the album.
