@@ -1,9 +1,7 @@
 # Spotify-ArtistSong-Analytics
 
 ## Overview
-The Spotify Artist Song Analytics Case Study is my personal project 
-
-This project aims to to gain insights into the characteristics and trends of the artist's songs. By leveraging the Spotify API, the project extracts track data, track analysis data, and track features data, which are then transformed and analyzed to uncover interesting patterns and information. The processes are implemented on Python, and the visualizations are created with Tableau. Below are the links to each component of the project.
+This personal project aims to to gain insights into the characteristics and trends of the artist's songs. By leveraging the Spotify API, the project extracts track data, track analysis data, and track features data, which are then transformed and analyzed to uncover interesting patterns and information. The processes are implemented on Python, and the visualizations are created with Tableau. Below are the links to each component of the project.
 
 - [Sppotify API functions](myFunctions.py)
 - [Extract & Transform](extract_transform_track.ipynb)
@@ -35,47 +33,49 @@ CLIENT_ID="your_client_id"
 CLIENT_SECRET="your_client_secret"
 ```
 
-
-## Data preparation
+## Data extraction and transformation
 In this case study, the arttributes shown here are those selected ....
+
+The Spotify API was used to retrieve three datasets. First, general data about the artist's tracks was collected, focusing on the artist's recent top tracks. Next, the track IDs were used to retrieve the audio analysis and feature data for these tracks. The maximum number of tracks that can be retrieved is **50 entries**, based on the artist's recent top tracks. Although these datasets contain many attributes, the project focuses on selected attributes from each dataset. The selection is based on simplicity and the developer's familiarity with the attributes.
+
+1. Track data: general information of the track.
+
 | Variable          | Description                                                                                                    |
 |-------------------|----------------------------------------------------------------------------------------------------------------|
-| ride_id           | The unique id of each ride                                                                                     |
-| rideable_type     | Type of bicycles, including classic, electric, and docked bikes                                                |
-| started_at        | The start time of the trip                                                                                     |
-| ended_at          | The end time of the trip                                                                                       |
-| start_station_name| The name of the station where the ride started                                                                 |
-| start_station_id  | The unique identifier for the station where the ride started                                                   |
-| end_station_name  | The name of the station where the ride ended                                                                   |
-| end_station_id    | The unique identifier for the station where the ride ended                                                     |
-| start_lat         | The latitude coordinate of the starting station                                                                |
-| start_lng         | The longitude coordinate of the starting station                                                               |
-| end_lat           | The latitude coordinate of the ending station                                                                  |
-| end_lng           | The longitude coordinate of the ending station                                                                 |
-| member_casual     | Indicates whether the rider is a member or a casual rider                                                      |
+| track_id          | The unique id of each track                                                                                    |
+| track_name        | The name of each track                                                                                         |
+| href              | A link to the Web API endpoint providing full details of the track.                                            |
+| popularity        | The popularity of the track. (0 and 100),calculated by the Spotify's algorithm.                                |
+| uri               | The name of the station where the ride started                                                                 |
+| release_date      | The unique identifier for the station where the ride started                                                   |
+| album_id          | The album's id of each track                                                                                   |
+| album_name        | The album's name of each track                                                                                 |
+
+2. Track's analysis data: a low-level audio analysis of the track.
+
+| Variable          | Description                                                                                                    |
+|-------------------|----------------------------------------------------------------------------------------------------------------|
+| duration          | Length of the track in seconds.                                                                                |
+| loudness          | The overall loudness of a track in decibels (dB).                                                              |
+| tempo             | The overall estimated tempo of a track in beats per minute (BPM).                                              |
+| time_signature    | The estimated time signature                                                                                   |
+| key               | The key the track is in. Integers map to pitches using standard Pitch Class notation.                          |
+| mode              | Mode indicates the modality (major or minor) of a track                                                        |
+
+3. Track's features data: audio feature information of the track.
+
+| Variable          | Description                                                                                                    |
+|-------------------|----------------------------------------------------------------------------------------------------------------|
+| acousticness      | A confidence measure from 0.0 to 1.0 of whether the track is acoustic.                                         |
+| energy            | Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity.             |
+| danceability      | How suitable a track is for dancing based on a combination of musical elements                                 |
 
 
-## Data exploration
-R programming was used for this step. Initially, the datasets from January to June 2023 were merged, **resulting in a total of 2,390,459 entries**. Subsequently, the **skim_without_charts** function was used to generate a data summary, as shown in the figure below.
+Following the extraction, the datasets were merged. Null values and duplications were observed, but no errors were detected. However, duplications in track names were identified, which might be problematic. In this project, only the track data with the latest release date is retained. Additionally, the values of all numeric columns are replaced with the mean values calculated from all rows of the track.
 
-<img src="/images/skim_without_charts.png" alt="Data Summary"> <br>
-
-Referring to the figure, it's evident that there are **null values** present in the following variables: start_station_id, start_station_name, end_station_id, end_station_name, end_lat, and end_lng.
-Following this observation, **duplications** and **spelling errors** within string datatype columns, including rideable_type, start_station_name, and end_station_name, was checked. No errors were detected.
-
-## Data cleaning
-
-Following exploration, the dataset was cleaned by:
-
-1. Entries with null values in start_station_id, start_station_name, end_station_id, and end_station_name were removed. (In this personal case study, despite their potential utility for future analysis, latitude and longitude were not used to avoid misleading analysis. For example, while displacement based on latitude and longitude may seem shorter, it doesn't consider real-world factors like buildings and roads that can make actual travel distances longer. Therefore, the null values in end_lat and end_lng were ignored.)
-2. Three new columns were added: ride_length (ended_at - started_at), day_of_week (Sunday - Saturday), and month.
-3. Entries where the ended time preceded the started time were excluded.
-4. Entries with ride durations longer than a day or less than a minute were excluded.
-
-After cleaning, **613,050 entries were removed**, resulting in **a total of 1,777,409 entries** in the dataset.
-The cleaned data was saved as a .csv file, making it readily available for analysis.
-
-The R code for data exploration and data cleaning can be found [here](bike_2023_clean_data.Rmd).
+After extraction and transformation, **2 entries were removed**, resulting in **a 48 entries** in the dataset.
+The data was saved as a .csv file, making it readily available for analysis.
+The Python code for extraction and transformation can be found [here](extract_transform_track.ipynb).
 
 ## Data analysis
 To address the key findings, the following analyses were performed using SQL.
