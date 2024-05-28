@@ -13,21 +13,21 @@ In this case study, the artist of focus is Fujii Kaze, a Japanese singer-songwri
 ## Spotify API
 To proceed locally, follow these steps:
 
-1. Clone the repository
+**1. Clone the repository**
 ```bash
 git clone https://github.com/yourusername/spotify-artist-song-analytics.git
 ```
 
-2. Create and activate a virtual environment
+**2. Create and activate a virtual environment**
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
-3. Install the required packages
+**3. Install the required packages**
 ```bash
 pip install -r requirements.txt
 ```
-4. Set up Spotify API credentials
+**4. Set up Spotify API credentials**
 
 Register on the Spotify Developer Dashboard to get client_id and client_secret. Create a .env file in the root directory of the project and add your credentials:
 ```bash
@@ -80,15 +80,15 @@ After extraction and transformation, **2 entries** were removed, resulting in a 
 The Python code for extraction and transformation can be found in [this notebook](extract_transform_track.ipynb).
 
 ## Data analysis
-To ....., the following analyses were performed.
+To derive the insights, the following analyses were performed.
 1. Exploration of statistics of all numeric values in the dataset.
 2. Identification of the most and least popular tracks.
 3. Examination of the key, mode, and time signature used.
 4. Inspection of the track analysis and features for each album.
 5. Tracking the popularity of songs by release year.
-6. Correlation analysis of each numeric attribute with respect to popularity.
+6. Correlation analysis of each numeric attribute towards the popularity.
 
-The SQL queries used for this data analysis can be found [here](bike_2023_analyze_data.sql).
+The Python code for this data analysis can be found [this notebook](analyze_track.ipynb).
 
 ## Data visualization
 The visualization was crafted using Tableau Public, featuring two pages: **Ride Distribution** and **Duration & Routes**.
