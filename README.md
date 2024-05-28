@@ -46,7 +46,7 @@ The Spotify API was used to retrieve three datasets. Initially, **general data**
 | track_id          | The unique id of each track.                                                                                    |
 | track_name        | The name of each track.                                                                                         |
 | href              | A link to the Web API endpoint providing full details of the track.                                            |
-| popularity        | The popularity of the track. (0 and 100),calculated by the Spotify's algorithm.                                |
+| popularity        | The popularity of the track. (0 and 100), calculated by the Spotify's algorithm.                                |
 | uri               | The Spotify URI for the album.                                                                 |
 | release_date      | The unique identifier for the station where the ride started.                                                   |
 | album_id          | The album's id of each track.                                                                                   |
@@ -88,7 +88,7 @@ To derive the insights, the following analyses were performed.
 5. Tracking the popularity of songs by release year.
 6. Correlation analysis of each numeric attribute towards the popularity.
 
-The Python code for this data analysis can be found [this notebook](analyze_track.ipynb).
+The Python code for this data analysis can be found in [this notebook](analyze_track.ipynb).
 
 ## Data visualization
 The visualization was crafted using Tableau Public, featuring two pages: **Ride Distribution** and **Duration & Routes**.
