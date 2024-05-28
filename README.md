@@ -1,15 +1,17 @@
 # Spotify-ArtistSong-Analytics
 
 ## Overview
-This personal project aims to to gain insights into the characteristics and trends of the artist's songs. By leveraging the Spotify API, the project extracts track data, track analysis data, and track features data, which are then transformed and analyzed to uncover interesting patterns and information. The processes are implemented on Python, and the visualizations are created with Tableau. Below are the links to each component of the project.
+This project aims to gain insights into the characteristics and trends of the artist's songs. By leveraging the Spotify API, the track data of the artist is extracted, transformed, and analyzed to uncover interesting patterns and information. The processes are implemented in Python, and the visualizations are created with Tableau. Below are the links to each component of the project:
 
-- [Sppotify API functions](myFunctions.py)
+- [Spotify API functions](myFunctions.py)
 - [Extract & Transform](extract_transform_track.ipynb)
 - [Analysis](analyze_track.ipynbl)
 - [Data visualization](....)
 
-## Sppotify API
-The myFunctions.py file can be used to extract the othet artists' tracks data. To proceed locally, follow these steps:
+In this case study, the artist of focus is Fujii Kaze, a Japanese singer-songwriter and musician under Universal Music Japan. By analyzing his songs, I aim to gain deeper insights into his musical style, trends in his song releases, and the preferences of his audience. Nevertheless, the [Spotify API functions](myFunctions.py) can be leveraged to retrieve data on songs from other artists as well. Therefore, feel free to download and expand the analysis for the discography of your favorite artists.
+
+## Spotify API
+To proceed locally, follow these steps:
 
 1. Clone the repository
 ```bash
@@ -34,35 +36,34 @@ CLIENT_SECRET="your_client_secret"
 ```
 
 ## Data extraction and transformation
-In this case study, the arttributes shown here are those selected ....
 
-The Spotify API was used to retrieve three datasets. First, general data about the artist's tracks was collected, focusing on the artist's recent top tracks. Next, the track IDs were used to retrieve the audio analysis and feature data for these tracks. The maximum number of tracks that can be retrieved is **50 entries**, based on the artist's recent top tracks. Although these datasets contain many attributes, the project focuses on selected attributes from each dataset. The selection is based on simplicity and the developer's familiarity with the attributes.
+The Spotify API was used to retrieve three datasets. Initially, **general data** about the artist's tracks was collected. Subsequently, the track IDs were utilized to obtain the **audio analysis** and **feature** data for these tracks. The maximum number of tracks that can be retrieved is **50**, based on the artist's recent top tracks. Although these datasets contain numerous attributes, the project focuses on the following selected attributes from each dataset. The selection criteria prioritize simplicity and the developer's familiarity with the attributes.
 
-1. Track data: general information of the track.
+**1. Track data: general information of the track.**
 
 | Variable          | Description                                                                                                    |
 |-------------------|----------------------------------------------------------------------------------------------------------------|
-| track_id          | The unique id of each track                                                                                    |
-| track_name        | The name of each track                                                                                         |
+| track_id          | The unique id of each track.                                                                                    |
+| track_name        | The name of each track.                                                                                         |
 | href              | A link to the Web API endpoint providing full details of the track.                                            |
 | popularity        | The popularity of the track. (0 and 100),calculated by the Spotify's algorithm.                                |
-| uri               | The name of the station where the ride started                                                                 |
-| release_date      | The unique identifier for the station where the ride started                                                   |
-| album_id          | The album's id of each track                                                                                   |
-| album_name        | The album's name of each track                                                                                 |
+| uri               | The Spotify URI for the album.                                                                 |
+| release_date      | The unique identifier for the station where the ride started.                                                   |
+| album_id          | The album's id of each track.                                                                                   |
+| album_name        | The album's name of each track.                                                                                |
 
-2. Track's analysis data: a low-level audio analysis of the track.
+**2. Track's analysis data: a low-level audio analysis of the track.**
 
 | Variable          | Description                                                                                                    |
 |-------------------|----------------------------------------------------------------------------------------------------------------|
 | duration          | Length of the track in seconds.                                                                                |
 | loudness          | The overall loudness of a track in decibels (dB).                                                              |
 | tempo             | The overall estimated tempo of a track in beats per minute (BPM).                                              |
-| time_signature    | The estimated time signature                                                                                   |
+| time_signature    | The estimated time signature.                                                                                   |
 | key               | The key the track is in. Integers map to pitches using standard Pitch Class notation.                          |
 | mode              | Mode indicates the modality (major or minor) of a track                                                        |
 
-3. Track's features data: audio feature information of the track.
+**3. Track's features data: audio feature information of the track.**
 
 | Variable          | Description                                                                                                    |
 |-------------------|----------------------------------------------------------------------------------------------------------------|
@@ -70,12 +71,13 @@ The Spotify API was used to retrieve three datasets. First, general data about t
 | energy            | Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity.             |
 | danceability      | How suitable a track is for dancing based on a combination of musical elements                                 |
 
+For more details on each attribute, please refer to the [Spotify for Developers official website](https://developer.spotify.com/documentation/web-api).
 
-Following the extraction, the datasets were merged. Null values and duplications were observed, but no errors were detected. However, duplications in track names were identified, which might be problematic. In this project, only the track data with the latest release date is retained. Additionally, the values of all numeric columns are replaced with the mean values calculated from all rows of the track.
+Following the extraction, the datasets were merged. Null values and duplications were observed, but no errors were detected. However, **duplications in track names** were identified, which could pose problems in analysis process. In this project, only the track data with the latest release date was retained, replacing the values of all numeric columns with the mean values calculated from all rows of the same track name.
 
-After extraction and transformation, **2 entries were removed**, resulting in **a 48 entries** in the dataset.
-The data was saved as a .csv file, making it readily available for analysis.
-The Python code for extraction and transformation can be found [here](extract_transform_track.ipynb).
+After extraction and transformation, **2 entries** were removed, resulting in a dataset containing **48 entries**. It's worth noting that some attributes, such as 'href' and 'uri', may not be immediately usable in the analysis process. However, they were retained for the purpose of further development.
+
+The Python code for extraction and transformation can be found in [this notebook](extract_transform_track.ipynb).
 
 ## Data analysis
 To address the key findings, the following analyses were performed using SQL.
