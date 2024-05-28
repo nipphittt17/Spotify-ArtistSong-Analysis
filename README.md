@@ -80,16 +80,13 @@ After extraction and transformation, **2 entries** were removed, resulting in a 
 The Python code for extraction and transformation can be found in [this notebook](extract_transform_track.ipynb).
 
 ## Data analysis
-To address the key findings, the following analyses were performed using SQL.
-1. The number of casual riders vs annual members contributed to total rides.
-2. Average duration of all trips for casual riders and annual members.
-3. The number of casual riders and annual members for each type of bike.
-4. The number of casual riders and annual members per day of the week, alongside the average trip duration.
-5. The distribution of casual riders and annual members across each hour of the day.
-6. The number of casual riders and annual members in each month, along with the average trip duration.
-7. The top 10 popular routes for annual members, including the total number of rides.
-8. The top 10 popular routes for casual riders, including the total number of rides.
-9. The top 10 round-trip routes, including the number of rides by both members and casual riders.
+To ....., the following analyses were performed.
+1. Exploration of statistics of all numeric values in the dataset.
+2. Identification of the most and least popular tracks.
+3. Examination of the key, mode, and time signature used.
+4. Inspection of the track analysis and features for each album.
+5. Tracking the popularity of songs by release year.
+6. Correlation analysis of each numeric attribute with respect to popularity.
 
 The SQL queries used for this data analysis can be found [here](bike_2023_analyze_data.sql).
 
@@ -102,7 +99,7 @@ The second page displays the average ride length (in minutes) across weekdays an
 <br><br><img src="/images/dashboard_2.png" alt="Data Summary"> <br>
 
 
-The interactive dashboard can be found [here](https://public.tableau.com/views/bike_data_17111672299010/Dashboard1?:language=en-US&onFirstInteraction=function()%20%7B%0A%20%20%20%20%20%20%20%20workbook%20%3D%20viz.getWorkbook();%0A%20%20%20%20%20%20%20%20activeSheet%20%3D%20workbook.getActiveSheet();%0A%20%20%20%20%20%20%20%20console.log(%22My%20dashboard%20is%20interactive%22);%0A%20%20%20%20%7D&:embed=y&:display_count=n&:sid=&:origin=viz_share_link). Some of the visualizations can be filtered by month, day of week, and rideable type for specific examination. 
+The interactive dashboard can be found [here](). Some of the visualizations can be filtered by month, day of week, and rideable type for specific examination. 
 
 ## Key findings
 - **Total Ride Distribution:** Annual members contribute to around two times higher number of total rides, compared to casual riders.
