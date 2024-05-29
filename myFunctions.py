@@ -65,7 +65,3 @@ def get_track_feature(token, track_id):
     result = get(url, headers=headers)
     json_result = json.loads(result.content)
     return json_result
-
-token = get_token()
-results = get_album(token, "4aawyAB9vmqN3uQ7FjRGTy")
-print(results)
