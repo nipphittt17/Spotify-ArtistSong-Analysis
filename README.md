@@ -96,13 +96,17 @@ To derive the insights, the following analyses were performed.
 The SQL code for this data analysis can be found in [here](track_analyze.sql).
 
 ## Data visualization
-The visualization was crafted using Tableau Public. It illustrates the 3 albums and top 10 tracks. song characteristics including energy, acousticness, and danceability were visualized as the box plots. Lastly, the mode and key distribution of each album and single were .... 
-Details were shown on hover.
-- Albums: album's name, released year, total tracks, and top track of that album
-- Each track in top 10 track: track's name, album's name or single, track duration in minutes
-- Each point in song characteristic box plot: track's name, album's name or single, the values between 0-1 (energy, danceability, or acousticmess)
-- Mode and key distribution: track's name, album's name or single, key, mode
+The visualization was created using Tableau Public. It showcases three albums and the top 10 tracks in a horizontal bar chart. Additionally, various song characteristics such as energy, acousticness, and danceability were depicted through box plots. Additionally, the mode and key distribution of each album and single were visualized in a vertical bar chart. In this chart, the rows represent the mode, the columns represent the album or single, and the count of tracks is represented in different colors, each corresponding to a different key.
+
+Clicking on certain attributes allows them to be used as filters for other visualizations. For instance, clicking on the album name filters the song characteristics, as well as the key and mode distribution, to display only data related to that specific album.
+
+Furthermore, additional details were provided on hover:
+- Albums: Album name, release year, total tracks, and the top track of that album.
+- Each track in the top 10 tracks: Track name, album name or single, and track duration in minutes.
+- Each point in the song characteristic box plot: Track name, album name or single, and the corresponding values between 0 and 1 (energy, danceability, or acousticness).
+- Each bar in the mode and key distribution: Track name, album name or single, key, and mode.
 <br><br> <img src="/images/dashboard_1.png" alt="Data Summary"> <br>
+
 The interactive dashboard can be found [here](https://public.tableau.com/views/draft_song/Dashboard22?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link).
 
 ## Key findings
