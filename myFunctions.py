@@ -65,3 +65,10 @@ def get_track_feature(token, track_id):
     result = get(url, headers=headers)
     json_result = json.loads(result.content)
     return json_result
+
+def get_artist(token, artist_id):
+    url = f"https://api.spotify.com/v1/artists/{artist_id}"
+    headers = get_auth_header(token)
+    result = get(url, headers=headers)
+    json_result = json.loads(result.content)
+    return json_result
