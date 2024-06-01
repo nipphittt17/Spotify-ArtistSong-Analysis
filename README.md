@@ -96,7 +96,7 @@ To derive the insights, the following analyses were performed.
 The SQL code for this data analysis can be found in [here](track_analyze.sql).
 
 ## Data visualization
-The visualization was created using Tableau Public. It showcases three albums and the top 10 tracks in a horizontal bar chart. Additionally, various song characteristics such as energy, acousticness, and danceability were depicted through box plots. Additionally, the mode and key distribution of each album and single were visualized in a vertical bar chart. In this chart, the rows represent the mode, the columns represent the album or single, and the count of tracks is represented in different colors, each corresponding to a different key.
+The visualization was created using Tableau Public. It showcases three albums and the top 10 tracks in a horizontal bar chart. Additionally, various song characteristics such as energy, acousticness, and danceability are depicted through box plots. To the right of the box plots, the average values of tempo and loudness are displayed. Furthermore, the mode and key distribution of each album and single is visualized in a vertical bar chart. In this chart, the rows represent the mode, the columns represent the album or single, and the count of tracks is represented in different colors, each corresponding to a different key.
 
 Clicking on certain attributes allows them to be used as filters for other visualizations. For instance, clicking on the album name filters the song characteristics, as well as the key and mode distribution, to display only data related to that specific album.
 
