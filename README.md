@@ -82,23 +82,28 @@ Following the extraction, the datasets were merged and transformed by
 
 After extraction and transformation, **21 entries** were removed, resulting in a dataset containing **29 entries**. It's worth noting that some attributes, such as 'href' and 'uri', may not be immediately usable in the analysis process. However, they were retained for the purpose of references and further development.
 
-The Python code for extraction and transformation can be found in [this notebook](extract_transform_track.ipynb).
+The Python code for extraction and transformation can be found [here](extract_transform_track.ipynb).
 
 ## Data analysis
 To derive the insights, the following analyses were performed.
-1. Identifying the Top 10 Popular Tracks.
-2. Album Details: Including name, release year, total tracks, and the most popular track in the album.
-3. Tracking Song Popularity by Release Year: This includes average values and the top song for each year.
-4. Analyzing Key, Mode, and Time Signature Distributions: This is done for all tracks and for each album.
-5. Examining Average Duration, Loudness, and Tempo: This analysis is conducted for all tracks and for each album.
-6. Inspecting Acousticness, Energy, and Danceability: This analysis is conducted for all tracks and for each album.
+1. Identifying the top 10 popular tracks.
+2. Deriving album details, including name, release year, total tracks, and the most popular track in the album.
+3. Tracking song popularity by released year, including average values and the top track for each year.
+4. Analyzing key, mode, and time signature distributions. This was done for all tracks and for each album.
+5. Examining average duration, loudness, and tempo. This analysis was conducted for all tracks and for each album.
+6. Inspecting acousticness, energy, and danceability. This analysis were conducted for all tracks and for each album.
 
-The Python code for this data analysis can be found in [this notebook](analyze_track.ipynb).
+The SQL code for this data analysis can be found in [here](track_analyze.sql).
 
 ## Data visualization
-The visualization was crafted using Tableau Public. It illustrates the ....
+The visualization was crafted using Tableau Public. It illustrates the 3 albums and top 10 tracks. song characteristics including energy, acousticness, and danceability were visualized as the box plots. Lastly, the mode and key distribution of each album and single were .... 
+Details were shown on hover.
+- Albums: album's name, released year, total tracks, and top track of that album
+- Each track in top 10 track: track's name, album's name or single, track duration in minutes
+- Each point in song characteristic box plot: track's name, album's name or single, the values between 0-1 (energy, danceability, or acousticmess)
+- Mode and key distribution: track's name, album's name or single, key, mode
 <br><br> <img src="/images/dashboard_1.png" alt="Data Summary"> <br>
-The interactive dashboard can be found [here]().
+The interactive dashboard can be found [here](https://public.tableau.com/views/draft_song/Dashboard22?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link).
 
 ## Key findings
 - **Total Ride Distribution:**
