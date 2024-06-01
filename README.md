@@ -6,7 +6,7 @@ This project aims to gain insights into the characteristics and trends of the ar
 - [Spotify API functions](myFunctions.py)
 - [Extract & Transform](extract_transform_track.ipynb)
 - [Analysis](analyze_track.sql)
-- [Data visualization](....)
+- [Data visualization](https://public.tableau.com/views/draft_song/Dashboard22?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 
 In this case study, the artist of focus is Fujii Kaze, a Japanese singer-songwriter and musician under Universal Music Japan. By analyzing his songs, I aim to gain deeper insights into his musical style, trends in his song releases, and the preferences of his audience. Nevertheless, the [Spotify API functions](myFunctions.py) can be leveraged to retrieve data on songs from other artists as well. Therefore, feel free to download and expand the analysis for the discography of your favorite artists.
 
