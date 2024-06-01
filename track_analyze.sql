@@ -44,7 +44,7 @@ FROM track_data_cleaned
 ORDER BY popularity DESC
 LIMIT 10;
 
--- 2. album and the released year
+-- 2. album details: name, released year, total tracks, top track
 WITH ranked_track_album AS (
     SELECT track_name, album_name, popularity, YEAR(release_date) as released_year, total_tracks, album_type,
         ROW_NUMBER() OVER (PARTITION BY album_name ORDER BY popularity DESC) AS rank_track
@@ -89,7 +89,7 @@ FROM track_data_cleaned
 GROUP BY track_mode
 ORDER BY count DESC;
 
--- 8. mode distributions in tracks of each album released each year
+-- 8. mode distributions in tracks of each album
 SELECT album_name, track_mode, COUNT(*) AS count
 FROM track_data_cleaned
 GROUP BY album_name, track_mode
