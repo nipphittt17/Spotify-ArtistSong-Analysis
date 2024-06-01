@@ -1,11 +1,11 @@
 # Spotify-ArtistSong-Analytics
 
 ## Overview
-This project aims to gain insights into the characteristics and trends of the artist's songs. By leveraging the Spotify API, the track data of the artist is extracted, transformed, and analyzed to uncover interesting patterns and information. The processes are implemented in Python, and the visualizations are created with Tableau. Below are the links to each component of the project:
+This project aims to gain insights into the characteristics and trends of the artist's songs. By leveraging the Spotify API, the track data of the artist is extracted, transformed, and analyzed to uncover interesting patterns and information. The extractation and transformation processes are implemented in Python, while the analysis process is performed in SQL. The discovered insights are visualized with Tableau. Below are the links to each component of the project:
 
 - [Spotify API functions](myFunctions.py)
 - [Extract & Transform](extract_transform_track.ipynb)
-- [Analysis](analyze_track.ipynbl)
+- [Analysis](analyze_track.sql)
 - [Data visualization](....)
 
 In this case study, the artist of focus is Fujii Kaze, a Japanese singer-songwriter and musician under Universal Music Japan. By analyzing his songs, I aim to gain deeper insights into his musical style, trends in his song releases, and the preferences of his audience. Nevertheless, the [Spotify API functions](myFunctions.py) can be leveraged to retrieve data on songs from other artists as well. Therefore, feel free to download and expand the analysis for the discography of your favorite artists.
@@ -37,7 +37,7 @@ CLIENT_SECRET="your_client_secret"
 
 ## Data extraction and transformation
 
-The Spotify API was used to retrieve three datasets. Initially, **general data** about the artist's tracks was collected. Subsequently, the track IDs were utilized to obtain the **audio analysis** and **feature** data for these tracks. The maximum number of tracks that can be retrieved is **50**, based on the artist's recent top tracks. Although these datasets contain numerous attributes, the project focuses on the following selected attributes from each dataset. The selection criteria prioritize simplicity and the developer's familiarity with the attributes.
+The Spotify API was used to retrieve three datasets along with some artist's information. Initially, **general data** about the artist's tracks was collected. Subsequently, the track IDs were utilized to obtain the **audio analysis** and **feature** data for these tracks. The maximum number of tracks that can be retrieved is **50**, based on the artist's recent top tracks. Although these datasets contain numerous attributes, the project focuses on the following selected attributes from each dataset. The selection criteria prioritize simplicity and the developer's familiarity with the attributes.
 
 **1. Track data: general information of the track.**
 
