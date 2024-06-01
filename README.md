@@ -65,7 +65,7 @@ Following the extraction, the datasets were merged and transformed by
 **1. Checking null values and duplications**
 - No null values or duplications in any entries.
 
-**2. Adjustmenting albums**
+**2. Adjusting albums**
 - Dropped cover albums *HELP EVER HURT COVER* and *LOVE ALL COVER ALL* to focus on original songs.
 - Removed the compilation album *Best of Fujii Kaze 2020-2024* as it contains duplicated versions of popular songs.
 - Noted that *Kirari Remixes (Asia Edition)* should have 9 tracks, but only 2 were retrieved due to the API limitation.
@@ -86,12 +86,12 @@ The Python code for extraction and transformation can be found in [this notebook
 
 ## Data analysis
 To derive the insights, the following analyses were performed.
-1. Exploration of statistics of all numeric values in the dataset.
-2. Identification of the most and least popular tracks.
-3. Examination of the key, mode, and time signature used.
-4. Inspection of the track analysis and features for each album.
-5. Tracking the popularity of songs by release year.
-6. Correlation analysis of each numeric attribute towards the popularity.
+1. Identifying the Top 10 Popular Tracks.
+2. Album Details: Including name, release year, total tracks, and the most popular track in the album.
+3. Tracking Song Popularity by Release Year: This includes average values and the top song for each year.
+4. Analyzing Key, Mode, and Time Signature Distributions: This is done for all tracks and for each album.
+5. Examining Average Duration, Loudness, and Tempo: This analysis is conducted for all tracks and for each album.
+6. Inspecting Acousticness, Energy, and Danceability: This analysis is conducted for all tracks and for each album.
 
 The Python code for this data analysis can be found in [this notebook](analyze_track.ipynb).
 
