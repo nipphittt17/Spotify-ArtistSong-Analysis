@@ -12,7 +12,7 @@ In this case study, the artist of focus is Fujii Kaze, a Japanese singer-songwri
 
 ## Data extraction and transformation
 
-The functions to retrieve data from Spotify API were written in [myFunctions.py](myFunctions.py) file. In [extract_transform_track.ipynb](extract_transform_track.ipynb), those functions were called to get four datasets along with some artist information. Initially, **general data** about the artist's tracks was collected. Subsequently, the track IDs were utilized to obtain the **audio analysis** and **audio feature** data for these tracks. The maximum number of tracks that can be retrieved is **50**, based on the artist's recent top tracks. After merging the track data, some information about their **albums** was also retrieved. Although these datasets contain numerous attributes, the project focuses on the following selected attributes from each dataset. The selection criteria prioritize simplicity and the developer's familiarity with the attributes.
+The functions to retrieve data from Spotify API were written in [myFunctions.py](myFunctions.py) file. In [extract_transform_track.ipynb](extract_transform_track.ipynb), those functions were called to get **4 datasets** along with some **artist information**. Initially, **general data** about the artist's tracks was collected. Subsequently, the track IDs were utilized to obtain the **audio analysis** and **audio feature** data for these tracks. The maximum number of tracks that can be retrieved is **50**, based on the artist's recent top tracks. After merging the track data, some information about their **albums** was also retrieved. Although these datasets contain numerous attributes, the project focuses on the following selected attributes from each dataset. The selection criteria prioritize simplicity and the developer's familiarity with the attributes.
 
 **1. Track data: general information of the track.**
 
@@ -68,13 +68,13 @@ Following the extraction, the datasets were merged and transformed by
 **2. Adjusting albums**
 - Dropped cover albums *HELP EVER HURT COVER* and *LOVE ALL COVER ALL* to focus on original songs.
 - Removed the compilation album *Best of Fujii Kaze 2020-2024* as it contains duplicated versions of popular songs.
-- Noted that *Kirari Remixes (Asia Edition)* should have 9 tracks, but only 2 were retrieved due to the API limitation.
-- There are two *Hana* albums with the same name but different versions. One contains an original song while the other contains a ballad version. For simplicity, focused on the original song and dropped the album with the track *Hana-Balad* as it should have four versions, but only two were retrieved.
+- Noted that *Kirari Remixes (Asia Edition)* should have 9 tracks, but only 2 were retrieved due to API limitations. Retrieving the other tracks from this album is possible but would require further implementation, which is not covered in this case study.
+- There are two *Hana* albums with the same name but different versions. One contains an original song, while the other contains multiple versions. The second album should contain 4 versions, but only the ballad version was retrieved, making the data incomplete. For simplicity, the analysis focused on the album (single) with the original song and excluded the album with the track *Hana-Balad*.
 
 **3. Addressing duplication tracks with Japanese titles**
-- *Matsuri* from the album *LOVE ALL COVER ALL* has a duplicated single version with a Japanese title (*まつり*). Since the audio analysis and features are very similar, we decided to keep the one with the English title due to its inclusion in the album and higher popularity.
-- *Hademo Ne-Yo -LASA edit* has its original version titled in Japanese (*へでもねーよ*). As the audio analysis and features differ, we kept both versions and translated the Japanese title to English (*Hademo Ne-Yo*).
-- *Kirari* from *Kirari Remixes (Asia Edition)* is titled in Japanese (*きらり*). However, there is also a Kirari track from the album LOVE ALL COVER ALL, so we renamed this one to *Kirari (Asia Edition)*.
+- *Matsuri* from the album *LOVE ALL COVER ALL* has a duplicated single version with a Japanese title (*まつり*). Since the audio analysis and features are very similar, I decided to keep the one with the English title due to its inclusion in the album and higher popularity.
+- *Hademo Ne-Yo -LASA edit* has its original version titled in Japanese (*へでもねーよ*). As the audio analysis and features differ, both versions were kept and the original one was translated from the Japanese title to English (*Hademo Ne-Yo*).
+- *Kirari* from *Kirari Remixes (Asia Edition)* is titled in Japanese (*きらり*). However, there is also a *Kirari* track from the album *LOVE ALL COVER ALL*, so it was renamed to *Kirari (Asia Edition)*.
 
 **4. Mapping analysis attributes**
 - Mapped the key and mode integers back to their original values (e.g. Major or Minor, and C, C#/Db, D, ..., B).
@@ -96,7 +96,7 @@ To derive the insights, the following analyses were performed.
 The SQL script for this data analysis can be found [here](track_analyze.sql).
 
 ## Data visualization
-The visualization was created using Tableau Public. It showcases three albums and the **top 10 tracks** in a horizontal bar chart. Additionally, various **song characteristics** such as energy, acousticness, and danceability are depicted through box plots. To the right of the box plots, the average values of tempo and loudness are displayed. Furthermore, the **mode and key distribution** of each album and single are visualized in a vertical bar chart. In this chart, the rows represent the mode, the columns represent the album or single, and the count of tracks is represented in different colors, each corresponding to a different key.
+The visualization was created using Tableau Public. It showcases **3 albums** and the **top 10 tracks** in a horizontal bar chart. Additionally, various **song characteristics** such as energy, acousticness, and danceability are depicted through box plots. To the right of the box plots, the average values of tempo and loudness are displayed. Furthermore, the **mode and key distribution** of each album and single are visualized in a vertical bar chart. In this chart, the rows represent the mode, the columns represent the album or single, and the count of tracks is represented in different colors, each corresponding to a different key.
 
 Clicking on certain attributes allows them to be used as filters for other visualizations. For instance, clicking on the album name filters the song characteristics, as well as the key and mode distribution, to display only data related to that specific album.
 
@@ -117,13 +117,13 @@ The interactive dashboard can be found [here](https://public.tableau.com/views/d
 **3. Song characteristics:**
   - Most of Fujii Kaze's songs, including singles and tracks across all albums, exhibit high danceability and energy values. This indicates that his songs are mostly lively and upbeat. The low acousticness suggests that his songs are likely more electronic, contributing to their energetic vibe.
 - Notably, the song *Bye for now* from the album *LOVE ALL SERVE ALL* stands out from the boxplots with its lowest energy and danceability, but the highest acousticness. This particular track is characterized by the sound of the piano, evoking a slow and somewhat nostalgic vibe, which contrasts with the typical upbeat nature of Fujii Kaze's music.
-- On average, Fujii Kaze's songs have a loudness of -7dB, which is relatively high compared to the typical range of [-60,0] dB. The average tempo across his albums is 130.4 BPM. From fastest to slowest, the albums are *LOVE ALL SERVE ALL* (138.0 BPM), *HELP EVER HURT NEVER* (126.3 BPM), and *Kirari Remixes (Asia Edition)* (116.0 BPM). The tempos of the first two albums fall within the Allegro range, characterized by fast and bright rhythms, while Kirari Remixes (Asia Edition) falls within the Moderato range. These tempos are commonly associated with dance and electronic music genres. [Note: Data for Kirari Remixes (Asia Edition) is incomplete].
+- On average, Fujii Kaze's songs have a loudness of -7dB, which is relatively high compared to the typical range of [-60,0] dB. The average tempo across his albums is 130.4 BPM. From fastest to slowest, the albums are *LOVE ALL SERVE ALL* (138.0 BPM), *HELP EVER HURT NEVER* (126.3 BPM), and *Kirari Remixes (Asia Edition)* (116.0 BPM). The tempos of the first two albums fall within the Allegro range, characterized by fast and bright rhythms, while *Kirari Remixes (Asia Edition)* falls within the Moderato range. These tempos are commonly associated with dance and electronic music genres. [Note: Data in *Kirari Remixes (Asia Edition)* is incomplete].
 
 In conclusion, it seems that Fujii Kaze has created music that is perfect for getting people moving and feeling pumped up! 
 
 **4. Mode, key, and time signature distribution:**
-- Approximately 70% of the retrieved tracks are in the major mode, contributing to a bright and cheerful vibe. Especially the album *LOVE ALL SERVE ALL*, 10 out of 11 tracks are in Major mode.
-- The top 3 most used keys in Fujii Kaze's songs are A, G, and C#/Db. The album "LOVE ALL SERVE ALL" demonstrates the most variety in the keys used.
+- Approximately 70% of the retrieved tracks are in the major mode, contributing to a bright and cheerful vibe. Especially the album *LOVE ALL SERVE ALL*, 10 out of 11 tracks are in the major mode.
+- The top 3 most used keys in Fujii Kaze's songs are A, G, and C#/Db. The album *LOVE ALL SERVE ALL* demonstrates the most variety in the keys used.
 - Only one song from the retrieved data uses a 3/4 time signature, which is *Kazeyo* from *HELP EVER HURT NEVER*.
 
 
