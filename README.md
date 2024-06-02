@@ -21,7 +21,7 @@ The functions to retrieve data from Spotify API were written in [myFunctions.py]
 | track_id          | The unique id of each track.                                                                                   |
 | track_name        | The name of each track.                                                                                        |
 | href              | A link to the Web API endpoint providing full details of the track.                                            |
-| popularity        | The popularity of the track. [0, 00], calculated by the Spotify's algorithm.                                   |
+| popularity        | The popularity of the track. [0, 100], calculated by the Spotify's algorithm.                                   |
 | uri               | The Spotify URI for the album.                                                                                 |
 | album_id          | The album's id of each track.                                                                                  |
 
