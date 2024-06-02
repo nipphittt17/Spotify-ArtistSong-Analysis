@@ -52,7 +52,7 @@ The functions to retrieve data from Spotify API were written in [myFunctions.py]
 | album_id          | The unique id of each album.                                                                                   |
 | album_name        | The name of each album.                                                                                        |
 | album_type        | The type of the album (single, album, compilation).                                                            |
-| album_popularity  | The popularity of the album. [0, 00], calculated by the Spotify's algorithm.                                   |
+| album_popularity  | The popularity of the album. [0, 100], calculated by the Spotify's algorithm.                                   |
 | release_date      | The date the album was first released.                                                                         |
 | total_tracks      | The number of tracks in the album.                                                                             |
 | album_uri         | The Spotify URI for the album.                                                                                 |
