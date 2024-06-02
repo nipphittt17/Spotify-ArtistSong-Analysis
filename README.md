@@ -105,7 +105,7 @@ Furthermore, additional details were provided on hover:
 - Each track in the top 10 tracks: Track name, album name or single, and track duration in minutes.
 - Each point in the song characteristic box plot: Track name, album name or single, and the corresponding values between 0 and 1 (energy, danceability, or acousticness).
 - Each bar in the mode and key distribution: Track name, album name or single, key, and mode.
-<br><br> <img src="/images/dashboard_1.png" alt="Data Summary"> <br>
+<br><br> <img src="Visualization_pic.png" alt="Visualization" height = 1000> <br>
 
 The interactive dashboard can be found [here](https://public.tableau.com/views/draft_song/Dashboard22?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link).
 
