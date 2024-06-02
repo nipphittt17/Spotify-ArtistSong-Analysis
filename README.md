@@ -12,7 +12,7 @@ In this case study, the artist of focus is Fujii Kaze, a Japanese singer-songwri
 
 ## Data extraction and transformation
 
-The functions to retrieve data from Spotify API were written in [myFunctions.py](myFunctions.py) file. In [extract_transform_track.ipynb](extract_transform_track.ipynb), those functions were called to get four datasets along with some artist's information. Initially, **general data** about the artist's tracks was collected. Subsequently, the track IDs were utilized to obtain the **audio analysis** and **audio feature** data for these tracks. The maximum number of tracks that can be retrieved is **50**, based on the artist's recent top tracks. After merging the track data, some information about their **albums** was also retrieved. Although these datasets contain numerous attributes, the project focuses on the following selected attributes from each dataset. The selection criteria prioritize simplicity and the developer's familiarity with the attributes.
+The functions to retrieve data from Spotify API were written in [myFunctions.py](myFunctions.py) file. In [extract_transform_track.ipynb](extract_transform_track.ipynb), those functions were called to get four datasets along with some artist information. Initially, **general data** about the artist's tracks was collected. Subsequently, the track IDs were utilized to obtain the **audio analysis** and **audio feature** data for these tracks. The maximum number of tracks that can be retrieved is **50**, based on the artist's recent top tracks. After merging the track data, some information about their **albums** was also retrieved. Although these datasets contain numerous attributes, the project focuses on the following selected attributes from each dataset. The selection criteria prioritize simplicity and the developer's familiarity with the attributes.
 
 **1. Track data: general information of the track.**
 
@@ -93,7 +93,7 @@ To derive the insights, the following analyses were performed.
 5. Examining average duration, loudness, and tempo. This analysis was conducted for all tracks and each album.
 6. Inspecting average acousticness, energy, and danceability. This analysis was conducted for all tracks and each album.
 
-The SQL scipt for this data analysis can be found in [here](track_analyze.sql).
+The SQL script for this data analysis can be found [here](track_analyze.sql).
 
 ## Data visualization
 The visualization was created using Tableau Public. It showcases three albums and the **top 10 tracks** in a horizontal bar chart. Additionally, various **song characteristics** such as energy, acousticness, and danceability are depicted through box plots. To the right of the box plots, the average values of tempo and loudness are displayed. Furthermore, the **mode and key distribution** of each album and single are visualized in a vertical bar chart. In this chart, the rows represent the mode, the columns represent the album or single, and the count of tracks is represented in different colors, each corresponding to a different key.
@@ -122,7 +122,7 @@ The interactive dashboard can be found [here](https://public.tableau.com/views/d
 In conclusion, it seems that Fujii Kaze has created music that is perfect for getting people moving and feeling pumped up! 
 
 **4. Mode, key, and time signature distribution:**
-- Approximately 70% of the retrieved tracks are in major mode, contributing to a bright and cheerlish vibe. Especially album *LOVE ALL SERVE ALL*, 10 out of 11 tracks are in Major mode.
+- Approximately 70% of the retrieved tracks are in the major mode, contributing to a bright and cheerful vibe. Especially the album *LOVE ALL SERVE ALL*, 10 out of 11 tracks are in Major mode.
 - The top 3 most used keys in Fujii Kaze's songs are A, G, and C#/Db. The album "LOVE ALL SERVE ALL" demonstrates the most variety in the keys used.
 - Only one song from the retrieved data uses a 3/4 time signature, which is *Kazeyo* from *HELP EVER HURT NEVER*.
 
