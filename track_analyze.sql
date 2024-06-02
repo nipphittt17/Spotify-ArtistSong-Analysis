@@ -39,7 +39,7 @@ MODIFY COLUMN album_href VARCHAR(100);
 -- begin analysis
 
 -- 1. top 10 track
-SELECT track_name, album_name, popularity
+SELECT track_name, album_name, popularity, acousticness, energy, loudness, danceability, track_key, track_mode
 FROM track_data_cleaned
 ORDER BY popularity DESC
 LIMIT 10;
@@ -111,9 +111,9 @@ SELECT ROUND(AVG(duration),2) AS avg_duration_sec, ROUND(AVG(loudness),2) as avg
 FROM track_data_cleaned;
 
 -- 12. features with their own units of each album: duration (m) loudness (dB), tempo (BPM)
-SELECT album_name, COUNT(track_id) as total_tracks,
-ROUND(AVG(duration),2) AS avg_duration_sec, ROUND(AVG(loudness),2) as avg_loudness_db, ROUND(AVG(tempo),2) as avg_tempo_bpm
+SELECT album_name, ROUND(AVG(duration),2) AS avg_duration_sec, ROUND(AVG(loudness),2) as avg_loudness_db, ROUND(AVG(tempo),2) as avg_tempo_bpm
 FROM track_data_cleaned
+WHERE album_type = 'album'
 GROUP BY album_name
 ORDER BY album_name;
 
@@ -122,9 +122,9 @@ SELECT ROUND(AVG(acousticness),2) AS avg_acousticness, ROUND(AVG(energy),2) as a
 FROM track_data_cleaned;
 
 -- 14. features with value range (0-1) of each album: acousticness, energy, danceability 
-SELECT album_name, COUNT(track_id) as total_tracks,
-ROUND(AVG(acousticness),2) AS avg_acousticness, ROUND(AVG(energy),2) as avg_energy, ROUND(AVG(danceability),2) as danceability
+SELECT album_name, ROUND(AVG(acousticness),2) AS avg_acousticness, ROUND(AVG(energy),2) as avg_energy, ROUND(AVG(danceability),2) as danceability
 FROM track_data_cleaned
+WHERE album_type = 'album'
 GROUP BY album_name
 ORDER BY album_name;
 
