@@ -30,7 +30,7 @@ The functions to retrieve data from Spotify API were written in [myFunctions.py]
 | Variable          | Description                                                                                                    |
 |-------------------|----------------------------------------------------------------------------------------------------------------|
 | duration          | Length of the track in seconds.                                                                                |
-| loudness          | The overall loudness of a track in decibels (dB).                                                              |
+| loudness          | The overall loudness of a track in decibels (dB). The typical range is [-60,0].                                |
 | tempo             | The overall estimated tempo of a track in beats per minute (BPM).                                              |
 | time_signature    | The estimated time signature.                                                                                  |
 | key               | The key the track is in. Integers map to pitches using standard Pitch Class notation.                          |
@@ -91,7 +91,7 @@ To derive the insights, the following analyses were performed.
 3. Tracking song popularity by released year, including average values and the top track for each year.
 4. Analyzing key, mode, and time signature distributions. This was done for all tracks and each album.
 5. Examining average duration, loudness, and tempo. This analysis was conducted for all tracks and each album.
-6. Inspecting acousticness, energy, and danceability. This analysis was conducted for all tracks and each album.
+6. Inspecting average acousticness, energy, and danceability. This analysis was conducted for all tracks and each album.
 
 The SQL scipt for this data analysis can be found in [here](track_analyze.sql).
 
@@ -103,18 +103,26 @@ Clicking on certain attributes allows them to be used as filters for other visua
 Furthermore, additional details were provided on hover:
 - Albums: Album name, release year, total tracks, and the top track of that album.
 - Each track in the top 10 tracks: The track name, album name or single, and track duration in minutes.
-- Each point in the song characteristic box plot: Track name, album name or single, and the corresponding values between 0 and 1 (energy, danceability, or acousticness).
-- Each bar in the mode and key distribution: Track name, album name or single, key, and mode.
+- Each point in the song characteristic box plot: The track name, album name or single, and the corresponding values between 0 and 1 (energy, danceability, or acousticness).
+- Each bar in the mode and key distribution: The track name, album name or single, key, mode, and time signature.
 <br><br> <img src="Visualization_pic.png" alt="Visualization" height = 1000> <br>
 
 The interactive dashboard can be found [here](https://public.tableau.com/views/draft_song/Dashboard22?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link).
 
 ## Key findings
-1. **3 albums:** Fujii Kaze has 3 original albums, including *HELP EVER HURT COVER*, *LOVE ALL COVER ALL*, and *Kirari Remixes (Asia Edition)*
-2. **Top 10 tracks:** 
-3. **Song characteristics:**
-  - Most of Fujii Kaze's songs, including singles and tracks across all albums, exhibit high danceability and energy values. This indicates that his songs are mostly lively and upbeat. The low acousticness suggests that his songs are likely more electronic or produced with fewer acoustic instruments, contributing to their energetic vibe.
-  - On average, Fujii Kaze's songs have a loudness of -7dB, which is relatively high compared to the typical range of [-60,0] dB. The average tempo across his albums is 130.4 BPM. From fastest to slowest, the albums are *LOVE ALL COVER ALL* (138.0 BPM), *HELP EVER HURT COVER* (126.3 BPM), and *Kirari Remixes (Asia Edition)* (116.0 BPM). The tempos of the first two albums fall within the Allegro range, characterized by fast and bright rhythms, while Kirari Remixes (Asia Edition) falls within the Moderato range. These tempos are commonly associated with dance and electronic music genres. [Note: Data for Kirari Remixes (Asia Edition) is incomplete].
-In conclusion, it seems that Fujii Kaze has created music that is perfect for getting people moving and feeling pumped up!
-4. 
+1. **Albums:** Fujii Kaze has released 3 original albums: *HELP EVER HURT NEVER*, *LOVE ALL SERVE ALL*, and *Kirari Remixes (Asia Edition)*. Additionally, there are 2 cover albums, *HELP EVER HURT COVER* and *LOVE ALL COVER ALL*, and 1 compilation album, *Best of Fujii Kaze 2020-2024*, which are not included in the analysis and visualization.
+2. **Top 10 tracks:**
+   
+4. **Song characteristics:**
+  - Most of Fujii Kaze's songs, including singles and tracks across all albums, exhibit high danceability and energy values. This indicates that his songs are mostly lively and upbeat. The low acousticness suggests that his songs are likely more electronic, contributing to their energetic vibe.
+- Notably, the song *Bye for now* from the album *LOVE ALL SERVE ALL* stands out from the boxplots with its lowest energy and danceability, the highest acousticness. This particular track is characterized by the sound of the piano, evoking a slow and somewhat nostalgic vibe, which contrasts with the typical upbeat nature of Fujii Kaze's music.
+  - On average, Fujii Kaze's songs have a loudness of -7dB, which is relatively high compared to the typical range of [-60,0] dB. The average tempo across his albums is 130.4 BPM. From fastest to slowest, the albums are *LOVE ALL SERVE ALL* (138.0 BPM), *HELP EVER HURT NEVER* (126.3 BPM), and *Kirari Remixes (Asia Edition)* (116.0 BPM). The tempos of the first two albums fall within the Allegro range, characterized by fast and bright rhythms, while Kirari Remixes (Asia Edition) falls within the Moderato range. These tempos are commonly associated with dance and electronic music genres. [Note: Data for Kirari Remixes (Asia Edition) is incomplete].
+
+In conclusion, it seems that Fujii Kaze has created music that is perfect for getting people moving and feeling pumped up! 
+
+4. **Mode, key, and time signature distribution:**
+- Approximately 70% of the retrieved tracks are in major mode, contributing to a bright and cheerlish vibe. Especially album *LOVE ALL SERVE ALL*, 10 out of 11 tracks are in Major mode.
+- The top 3 most used keys in Fujii Kaze's songs are A, G, and C#/Db. The album "LOVE ALL SERVE ALL" demonstrates the most variety in the keys used.
+- Only one song from the retrieved data uses a 3/4 time signature. which is *Kazeyo* from *HELP EVER HURT NEVER*.
+
 
