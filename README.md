@@ -96,7 +96,7 @@ To derive the insights, the following analyses were performed.
 The SQL scipt for this data analysis can be found in [here](track_analyze.sql).
 
 ## Data visualization
-The visualization was created using Tableau Public. It showcases three albums and the top 10 tracks in a horizontal bar chart. Additionally, various song characteristics such as energy, acousticness, and danceability are depicted through box plots. To the right of the box plots, the average values of tempo and loudness are displayed. Furthermore, the mode and key distribution of each album and single are visualized in a vertical bar chart. In this chart, the rows represent the mode, the columns represent the album or single, and the count of tracks is represented in different colors, each corresponding to a different key.
+The visualization was created using Tableau Public. It showcases three albums and the **top 10 tracks** in a horizontal bar chart. Additionally, various **song characteristics** such as energy, acousticness, and danceability are depicted through box plots. To the right of the box plots, the average values of tempo and loudness are displayed. Furthermore, the **mode and key distribution** of each album and single are visualized in a vertical bar chart. In this chart, the rows represent the mode, the columns represent the album or single, and the count of tracks is represented in different colors, each corresponding to a different key.
 
 Clicking on certain attributes allows them to be used as filters for other visualizations. For instance, clicking on the album name filters the song characteristics, as well as the key and mode distribution, to display only data related to that specific album.
 
@@ -111,18 +111,19 @@ The interactive dashboard can be found [here](https://public.tableau.com/views/d
 
 ## Key findings
 1. **Albums:** Fujii Kaze has released 3 original albums: *HELP EVER HURT NEVER*, *LOVE ALL SERVE ALL*, and *Kirari Remixes (Asia Edition)*. Additionally, there are 2 cover albums, *HELP EVER HURT COVER* and *LOVE ALL COVER ALL*, and 1 compilation album, *Best of Fujii Kaze 2020-2024*, which are not included in the analysis and visualization.
-2. **Top 10 tracks:**
    
-4. **Song characteristics:**
+3. **Top 10 tracks:** The top 10 tracks by Fujii Kaze are *Shinunoga E-Wa, Michi Teyu Ku (Overflowing), Kirari (Asia Edition), Matsuri, Hana, grace, Workin' Hard, Garden, damn, and Nan-Nan*. It is noteworthy that the popularity is not directly correlated with the number of views on Spotify streaming. According to Spotify's official website for developers, *'The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are. Generally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past.'*
+   
+3. **Song characteristics:**
   - Most of Fujii Kaze's songs, including singles and tracks across all albums, exhibit high danceability and energy values. This indicates that his songs are mostly lively and upbeat. The low acousticness suggests that his songs are likely more electronic, contributing to their energetic vibe.
-- Notably, the song *Bye for now* from the album *LOVE ALL SERVE ALL* stands out from the boxplots with its lowest energy and danceability, the highest acousticness. This particular track is characterized by the sound of the piano, evoking a slow and somewhat nostalgic vibe, which contrasts with the typical upbeat nature of Fujii Kaze's music.
-  - On average, Fujii Kaze's songs have a loudness of -7dB, which is relatively high compared to the typical range of [-60,0] dB. The average tempo across his albums is 130.4 BPM. From fastest to slowest, the albums are *LOVE ALL SERVE ALL* (138.0 BPM), *HELP EVER HURT NEVER* (126.3 BPM), and *Kirari Remixes (Asia Edition)* (116.0 BPM). The tempos of the first two albums fall within the Allegro range, characterized by fast and bright rhythms, while Kirari Remixes (Asia Edition) falls within the Moderato range. These tempos are commonly associated with dance and electronic music genres. [Note: Data for Kirari Remixes (Asia Edition) is incomplete].
+- Notably, the song *Bye for now* from the album *LOVE ALL SERVE ALL* stands out from the boxplots with its lowest energy and danceability, but the highest acousticness. This particular track is characterized by the sound of the piano, evoking a slow and somewhat nostalgic vibe, which contrasts with the typical upbeat nature of Fujii Kaze's music.
+- On average, Fujii Kaze's songs have a loudness of -7dB, which is relatively high compared to the typical range of [-60,0] dB. The average tempo across his albums is 130.4 BPM. From fastest to slowest, the albums are *LOVE ALL SERVE ALL* (138.0 BPM), *HELP EVER HURT NEVER* (126.3 BPM), and *Kirari Remixes (Asia Edition)* (116.0 BPM). The tempos of the first two albums fall within the Allegro range, characterized by fast and bright rhythms, while Kirari Remixes (Asia Edition) falls within the Moderato range. These tempos are commonly associated with dance and electronic music genres. [Note: Data for Kirari Remixes (Asia Edition) is incomplete].
 
 In conclusion, it seems that Fujii Kaze has created music that is perfect for getting people moving and feeling pumped up! 
 
 4. **Mode, key, and time signature distribution:**
 - Approximately 70% of the retrieved tracks are in major mode, contributing to a bright and cheerlish vibe. Especially album *LOVE ALL SERVE ALL*, 10 out of 11 tracks are in Major mode.
 - The top 3 most used keys in Fujii Kaze's songs are A, G, and C#/Db. The album "LOVE ALL SERVE ALL" demonstrates the most variety in the keys used.
-- Only one song from the retrieved data uses a 3/4 time signature. which is *Kazeyo* from *HELP EVER HURT NEVER*.
+- Only one song from the retrieved data uses a 3/4 time signature, which is *Kazeyo* from *HELP EVER HURT NEVER*.
 
 
