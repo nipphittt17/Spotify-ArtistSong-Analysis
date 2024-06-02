@@ -1,4 +1,4 @@
-# Spotify-ArtistSong-Analytics
+# Spotify-ArtistSong-Analysis
 
 ## Overview
 This project aims to gain insights into the characteristics and trends of the artist's songs. By leveraging the Spotify API, the track data of the artist is extracted, transformed, and analyzed to uncover interesting patterns and information. The extraction and transformation processes are implemented in Python, while the analysis process is performed in SQL. The discovered insights are visualized with Tableau. Below are the links to each component of the project:
